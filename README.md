@@ -8,7 +8,15 @@ The scripts rely on Purview CLI and jq. Follow each product's guide for installa
 - [jq](https://stedolan.github.io/jq/)
 
 ## Usage
-The `scripts` directory contains `purview-migration-helper.sh` and sample scripts. By giving the helper script Purview CLI's read commands, you can export Purview resources as JSON format payloads. You can use these payloads as input for Purview CLI's put commands. You can use the export and import sample scripts in the `scripts` directory with just a little rewriting to fit your environment.
+The `scripts` directory contains `purview-migration-helper.sh` and sample scripts. By giving the helper script Purview CLI read commands, you can export Purview resources as JSON format payloads. You can use these payloads as input for Purview CLI put commands. You can use the export and import sample scripts in the `scripts` directory with just a little or zero rewriting to fit your environment.
+
+```
+# Export resources
+$ ./scripts/sample-export-resources.sh
+
+# Import resources
+$ ./scripts/sample-import-resources.sh "/path/to/payloads"
+```
 
 The following image shows exported JSON payloads. Each JSON file contains a single JSON payload, and each file can be specified as input to Purview CLI put commands.
 

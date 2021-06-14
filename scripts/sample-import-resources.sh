@@ -2,7 +2,7 @@
 # Sample script to import Purview's resources with Purview CLI. Please try this script after exporting payloads with atnoher sample script.
 
 # [Required] Specify payload base directory
-declare -r PAYLOAD_BASE_DIR="/path/to/payloads"
+declare -r PAYLOAD_BASE_DIR="${1}"
 if [ ! -d "${PAYLOAD_BASE_DIR}" ]; then
   echo "Payload base directory does not exist."
   exit 1

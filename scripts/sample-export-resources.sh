@@ -27,3 +27,6 @@ datasource_names=($(pv scan readDatasources | jq -r '.value[].name'))
 for datasource_name in ${datasource_names[@]}; do
   export_resources "pv scan readScans --dataSourceName=${datasource_name}" "${PAYLOAD_BASE_DIR}/scans/${datasource_name}"
 done
+
+# Export glossary terms
+export_resources "pv glossary readTerms --glossaryName=Glossary" "${PAYLOAD_BASE_DIR}/glossary/terms"
